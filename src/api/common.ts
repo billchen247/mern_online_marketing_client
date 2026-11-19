@@ -4,7 +4,7 @@
  */
 import { getAuthToken, setAuthToken } from "./tokenStorage.ts";
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "https://mern-online-marketing-api.onrender.com";
+const API_BASE_URL = import.meta.env?.VITE_API_BASE_URL ?? "https://mern-online-marketing-api.onrender.com";
 export async function request<T>(
     url: string,
     init: RequestInit = {},

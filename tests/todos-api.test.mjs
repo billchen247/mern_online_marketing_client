@@ -22,7 +22,7 @@ test("list requests todos with the session cookie", async () => {
     };
 
     assert.deepEqual(await todosApi.list(), todos);
-    assert.equal(requestedUrl, "/api/todos");
+    assert.equal(requestedUrl, "https://mern-online-marketing-api.onrender.com/api/todos");
     assert.equal(requestInit.credentials, "include");
     assert.equal(new Headers(requestInit.headers).get("Content-Type"), "application/json");
 });

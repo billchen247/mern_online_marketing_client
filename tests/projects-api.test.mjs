@@ -22,7 +22,7 @@ test("list requests projects with the session cookie", async () => {
     };
 
     assert.deepEqual(await projectsApi.list(), projects);
-    assert.equal(requestedUrl, "/api/projects");
+    assert.equal(requestedUrl, "https://mern-online-marketing-api.onrender.com/api/projects");
     assert.equal(requestInit.credentials, "include");
     assert.equal(new Headers(requestInit.headers).get("Content-Type"), "application/json");
 });
@@ -58,7 +58,7 @@ test("update sends a JSON PATCH", async () => {
     };
 
     assert.deepEqual(await projectsApi.update("project-1", { name: "Website v2" }), project);
-    assert.equal(requestedUrl, "/api/projects/project-1");
+    assert.equal(requestedUrl, "https://mern-online-marketing-api.onrender.com/api/projects/project-1");
     assert.equal(requestInit.method, "PATCH");
     assert.equal(requestInit.body, JSON.stringify({ name: "Website v2" }));
 });

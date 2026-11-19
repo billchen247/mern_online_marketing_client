@@ -7,7 +7,7 @@ const originalWindow = globalThis.window;
 const storage = new Map();
 
 globalThis.window = {
-    localStorage: {
+    sessionStorage: {
         getItem(key) {
             return storage.get(key) ?? null;
         },
@@ -55,7 +55,7 @@ test("request preserves cookie authentication when no local token is stored", as
         });
     };
 
-    await request("/api/profile");
+    await request("https://mern-online-marketing-api.onrender.com/api/profile");
     assert.equal(requestInit.credentials, "include");
     assert.equal(requestInit.headers.has("X-Auth-Token"), false);
 });
